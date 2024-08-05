@@ -5,11 +5,12 @@ import { FiDownload } from "react-icons/fi";
 // Components
 import SocialIcons from "@/components/SocialIcons";
 import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
     <section className="h-full">
-      <div className="container mx-auto h-full">
+      <div className="container mx-auto h-full xl:mb-8">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pd-24">
           {/* Text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
@@ -49,6 +50,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Stats */}
+      <Stats />
     </section>
   );
 };
