@@ -1,3 +1,52 @@
-export default function Home() {
-  return <main>homepage</main>;
-}
+"use client";
+import { Button } from "@/components/ui/button";
+import { FiDownload } from "react-icons/fi";
+
+// Components
+import SocialIcons from "@/components/SocialIcons";
+
+const Home = () => {
+  return (
+    <section className="h-full">
+      <div className="container mx-auto h-full">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pd-24">
+          {/* Text */}
+          <div className="text-center xl:text-left">
+            <span className="text-xl">Software Developer</span>
+            <h1 className="h1 mb-6">
+              Hi there, I'm <br />{" "}
+              <span className="text-green-400">Rasheed Johnson</span>
+            </h1>
+            <p className="max-w-[500px] mb-9 text-white/80">
+              After creating software in various languages, using a wide range
+              of technologies. over the last 10 years, I've developed a passion
+              for crafting effective digital experiences.
+            </p>
+
+            {/* Buttons and Socials */}
+            <div className="flex flex-col xl:flex-row items-center gap-8">
+              <Button
+                variant="outline"
+                size="lg"
+                className="uppercase flex items-center gap-2"
+              >
+                <span>Download CV</span>
+                <FiDownload className="text-xl" />
+              </Button>
+              <div className="mb-8 xl:mb-0">
+                <SocialIcons
+                  containerStyles="flex gap-6"
+                  iconStyles="w-9 h-9 border border-green-300 rounded-full flex justify-center items-center text-green-300 text-base hover:bg-green-300 hover:text-primary hover:transition-all duration-500"
+                />
+              </div>
+            </div>
+          </div>
+          {/* Photo */}
+          <div>photo</div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Home;
