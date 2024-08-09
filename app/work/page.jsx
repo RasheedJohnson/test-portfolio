@@ -6,7 +6,14 @@ import React, { useState } from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css";
 
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import {
+  BsArrowUpRight,
+  BsChevronBarRight,
+  BsChevronLeft,
+  BsChevronRight,
+  BsGithub,
+} from "react-icons/bs";
+import { ChevronLeft, ChevronRight, ChevronRightCircle } from "lucide-react";
 
 import {
   Tooltip,
@@ -38,6 +45,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { FiFramer } from "react-icons/fi";
+import Swiper from "swiper";
 
 // Projects
 const projects = [
@@ -50,7 +58,6 @@ const projects = [
     stack: [
       { name: "Python", icon: <FaPython /> },
       { name: "SQLite3", icon: <SiSqlite /> },
-      // { name: "CustomTkinter", icon: "./customtkinter.png" },
     ],
     image: "",
     live: "",
@@ -107,7 +114,18 @@ const projects = [
 ];
 
 const Work = () => {
-  const [project, setProject] = useState(projects[0]);
+  const [projectNum, setProjectNum] = useState(0);
+
+  const handleNext = () => {
+    if (projectNum == projects.length - 1) {
+      setProjectNum(0);
+    } else setProjectNum((prevNum) => prevNum + 1);
+  };
+  const handleBack = () => {
+    if (projectNum == 0) {
+      setProjectNum(projects.length - 1);
+    } else setProjectNum((prevNum) => prevNum - 1);
+  };
 
   return (
     <motion.section
@@ -120,21 +138,35 @@ const Work = () => {
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px]">
               {/* Outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
+              <div className="text-8xl leading-none font-extrabold text-transparent text-outline flex flex-row justify-between">
+                <div
+                  className="text-green-300 flex justify-center items-center hover:bg-white/5 transition-all ease-in-out duration-300 rounded-full p-5"
+                  onClick={handleBack}
+                >
+                  <BsChevronLeft />
+                </div>
+                <div>{projects[projectNum].num}</div>
+                <div
+                  className=" text-green-300 flex justify-center items-center hover:bg-white/5 transition-all ease-in-out duration-300 rounded-full p-5"
+                  onClick={handleNext}
+                >
+                  <BsChevronRight />
+                </div>
               </div>
 
               {/* Project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-green-300 transition-all duration-500 capitalize">
-                {project.category}
+                {projects[projectNum].title}
               </h2>
 
               {/* Project description */}
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-white/60">
+                {projects[projectNum].description}
+              </p>
 
               {/* Stack */}
               <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
+                {projects[projectNum].stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-green-400">
                       <TooltipProvider delayDuration={100}>
@@ -159,7 +191,7 @@ const Work = () => {
               {/* Buttons */}
               <div className="flex flex-row gap-4">
                 {/* Live Project Button */}
-                <Link href={project.live}>
+                <Link href={projects[projectNum].live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center">
@@ -173,7 +205,7 @@ const Work = () => {
                 </Link>
 
                 {/* Github Project Button */}
-                <Link href={project.github}>
+                <Link href={projects[projectNum].github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center">
@@ -188,7 +220,9 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">slider</div>
+          <div className="w-full xl:w-[50%]">
+            <div className="h-[650px] relative flex justify-center items-center bg-pink-50/20"></div>
+          </div>
         </div>
       </div>
     </motion.section>

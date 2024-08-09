@@ -89,7 +89,7 @@ const skills = {
   icon: "",
   title: "My Skills",
   description:
-    "Lorem Ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Here you'll find languages, tools and frameworks with which I've familiarised myself during the last 6+ years",
   items: [
     {
       icon: <FaHtml5 />,
@@ -165,7 +165,7 @@ const page = () => {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="experience"
+          defaultValue="education"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
@@ -219,7 +219,7 @@ const page = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skills.items.map((skill, index) => {
                     return (
                       <li key={index}>
@@ -247,7 +247,7 @@ const page = () => {
               value="about"
               className="w-full text-center xl:text-left"
             >
-              <ScrollArea className="h-[730px] shadow-xl shadow-black/20 p-6 rounded-lg">
+              <ScrollArea className="h-[830px] shadow-xl shadow-black/20 p-6 rounded-lg">
                 <div className="fex flex-col gap-[30px]">
                   <h3 className="text-4xl font-bold mb-10">{about.title}</h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8">
