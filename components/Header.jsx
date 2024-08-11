@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 // Components
 import Nav from "./Nav";
@@ -11,9 +12,14 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Rasheed<span className="text-accent">.</span>
-          </h1>
+          <div className="text-4xl flex justify-center font-semibold">
+            <Image
+              src="/Untitled.png"
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
+          </div>
         </Link>
 
         {/* Desktop nav */}

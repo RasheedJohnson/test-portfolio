@@ -1,146 +1,7 @@
 "use client";
 
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-  FaPython,
-} from "react-icons/fa";
-
-import {
-  SiTailwindcss,
-  SiNextdotjs,
-  SiDjango,
-  SiExpress,
-  SiMongodb,
-  SiSqlite,
-  SiC,
-} from "react-icons/si";
-import aboutMeText from "./aboutme";
-
-// About Data
-const about = {
-  title: "About me",
-  descriptionOne:
-    "I'm Rasheed, a software developer from Cape Town, South Africa. My passion for programming began shortly after high school. While working as a freelance portrait painter during the day, I spent most of my nights tinkering with electronics and familiarising myself with microcontrollers and C programming. Once it became clear that I could develop the skills required to solve (or work toward solving) real world problems, I began improving my skills.",
-  descriptionTwo:
-    "This sparked a deeper interest in the field. Thereafter, I found myself refining my craft with regular practice, incorporating various frameworks, languages and tools. I quickly transitioned from Bootstrap to Tailwindcss, enabling me to fine-tune designs. That was followed by a shift from Express within standard MERN stack development to Next.js for its developer experience and community. It was a journey toward finding a reliable and stable tech stack. During this journey, I've developed various personal projects, apps and tools to improve my daily life as well as the lives of those around me. These projects range from a terminology database for a psychology course to an account manager built with Python, SQLite3, and CustomTkinter. The largest project, currently still in developement, attempts to offer solutions to a variety of problems and inconveniences in health care. This is also the project I am currently most focused on.",
-  descriptionThree:
-    "I haven't stopped learning since the beginning of this journey, and still remain focused on constantly improving, be it through completing effective online courses or practicing by building using newly acquired skills.",
-  info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Rasheed Johnson",
-    },
-    {
-      fieldName: "Phone",
-      fieldValue: "-",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "6+ years",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "rasheedjohnson@tutanota.com",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Afrikaans",
-    },
-  ],
-};
-
-// Education Data
-const education = {
-  icon: "",
-  title: "My Education",
-  description:
-    "Lorem Ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
-  items: [
-    {
-      institution: "edX, IBM",
-      degree: "IBM Applied AI",
-      duration: "March 2021",
-    },
-    {
-      institution: "edX, Dartmouth and Télécom ParisTech",
-      degree: "C Programming with Linux",
-      duration: "November 2021",
-    },
-    {
-      institution: "CS50, Harvard",
-      degree: "CS50 Python",
-      duration: "August 2024",
-    },
-    {
-      institution: "CS50, Harvard",
-      degree: "CS50x (CS50’s Intro to CS)",
-      duration: "In Progress",
-    },
-  ],
-};
-
-// Skills Data
-const skills = {
-  icon: "",
-  title: "My Skills",
-  description:
-    "Here you'll find languages, tools and frameworks with which I've familiarised myself during the last 6+ years",
-  items: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css",
-    },
-    {
-      icon: <FaPython />,
-      name: "Python",
-    },
-    {
-      icon: <FaJs />,
-      name: "javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
-    },
-    {
-      icon: <SiMongodb />,
-      name: "mongodb",
-    },
-    {
-      icon: <SiSqlite />,
-      name: "SQLite3",
-    },
-    {
-      icon: <FaFigma />,
-      name: "figma",
-    },
-    {
-      icon: <SiC />,
-      name: "c programming",
-    },
-  ],
-};
+// Import content
+import { education, skills, projects, about } from "@/lib/content";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -151,8 +12,11 @@ import {
 } from "@/components/ui/tooltip";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Image from "next/image";
+import Link from "next/link";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
-const Resume = () => {
+const About = () => {
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
       <div className="container mx-auto">
@@ -164,6 +28,7 @@ const Resume = () => {
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
+            <TabsTrigger value="work">Work</TabsTrigger>
           </TabsList>
 
           {/* Content */}
@@ -175,7 +40,7 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
-                <ScrollArea className="h-[400px]">
+                <ScrollArea className="h-[600px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index) => {
                       return (
@@ -269,6 +134,80 @@ const Resume = () => {
                 </div>
               </ScrollArea>
             </TabsContent>
+
+            {/* Work */}
+            <TabsContent value="work" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">My Projects</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  Projects I've worked on recently. The following includes those
+                  still in development.
+                </p>
+                <section className="h-full">
+                  <ul className="grid grid-cols-1  gap-[30px]">
+                    {projects.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] h-min py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <div className="flex flex-col lg:flex-row md:ml-0 items-center md:justify-start gap-8">
+                            <div className="flex flex-col justify-between h-[200px]">
+                              {/* Category */}
+                              <span className="text-green-300">
+                                {item.category}
+                              </span>
+
+                              {/* Title */}
+                              <h3 className="text-xl max-w-[260px] min-h-[60px] mx-auto lg:ml-0">
+                                {item.title}
+                              </h3>
+
+                              {/* Tech Stack */}
+                              <ul className="flex gap-4 max-w-[380px] flex-wrap">
+                                {item.stack.map((stackItem, index) => {
+                                  return (
+                                    <li
+                                      key={index}
+                                      className="text-sm text-green-400"
+                                    >
+                                      <div className="text-4xl group-hover:text-green-400 transition-all duration-300">
+                                        {stackItem.icon}
+                                      </div>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                              <div></div>
+                            </div>
+
+                            {/* Image */}
+                            <div className="h-[200px] w-[390px] w-md:w-[450px] xl:w-[360px] relative flex justify-center items-center rounded-lg">
+                              {/* Image */}
+                              <Image
+                                src={item.image}
+                                fill
+                                className="object-contain"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div className="flex flex-row gap-4">
+                            <Link href={item.live}>
+                              <BsArrowUpRight className="text-white text-3xl group-hover:text-green-300" />
+                            </Link>
+                            <Link href={item.github}>
+                              <BsGithub className="text-white text-3xl group-hover:text-green-300" />
+                            </Link>
+                          </div>
+                          <p className="text-white/60">{item.description}</p>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+              </div>
+            </TabsContent>
           </div>
         </Tabs>
       </div>
@@ -276,4 +215,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default About;

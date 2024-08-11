@@ -34,10 +34,12 @@ import {
 
 import {
   SiC,
+  SiDjango,
   SiJavascript,
   SiMongodb,
   SiMongoose,
   SiNextdotjs,
+  SiPython,
   SiSqlite,
   SiTailwindcss,
 } from "react-icons/si";
@@ -45,7 +47,6 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { FiFramer } from "react-icons/fi";
-import Swiper from "swiper";
 
 // Projects
 const projects = [
@@ -59,7 +60,7 @@ const projects = [
       { name: "Python", icon: <FaPython /> },
       { name: "SQLite3", icon: <SiSqlite /> },
     ],
-    image: "",
+    image: "/acc_man.png",
     live: "",
     github: "",
   },
@@ -107,6 +108,21 @@ const projects = [
     description:
       "Magni quae nesciunt nemo officia nihil, adipisci excepturi, esse est. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi iste odit dicta... Incidunt id maiores laboriosam aut voluptate magnam voluptatem.",
     stack: [{ name: "C", icon: <SiC /> }],
+    image: "",
+    live: "",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "Full-Stack Django App",
+    title: "Dev Process Manager",
+    description:
+      "Magni quae nesciunt nemo officia nihil, adipisci excepturi, esse est. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi iste odit dicta... Incidunt id maiores laboriosam aut voluptate magnam voluptatem.",
+    stack: [
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "Python", icon: <SiPython /> },
+      { name: "Django", icon: <SiDjango /> },
+    ],
     image: "",
     live: "",
     github: "",
@@ -217,7 +233,19 @@ const Work = () => {
             </div>
           </div>
           <div className="w-full xl:w-[50%]">
-            <div className="h-[650px] relative flex justify-center items-center bg-pink-50/20"></div>
+            <div className="h-64 relative flex justify-center items-center bg-pink-50/20">
+              {/* Overlay */}
+              <div></div>
+              {/* Image */}
+              <div>
+                <Image
+                  src={projects[projectNum].image}
+                  fill
+                  className="object-contain"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
+import Image from "next/image";
 
 const links = [
   {
@@ -11,16 +12,8 @@ const links = [
     path: "/",
   },
   {
-    name: "services",
-    path: "/services",
-  },
-  {
-    name: "resume",
-    path: "/resume",
-  },
-  {
-    name: "work",
-    path: "/work",
+    name: "about",
+    path: "/about",
   },
   {
     name: "contact",
@@ -40,9 +33,14 @@ const MobileNav = () => {
         {/* Logo */}
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-4xl font-semibold">
-              Rasheed<span className="text-accent">.</span>
-            </h1>
+            <div className="text-4xl flex justify-center font-semibold">
+              <Image
+                src="/Untitled.png"
+                width={80}
+                height={80}
+                className="rounded-full"
+              />
+            </div>
           </Link>
         </div>
 
