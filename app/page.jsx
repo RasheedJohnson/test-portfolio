@@ -22,7 +22,7 @@ const Home = () => {
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80 mx-auto xl:mx-0">
               After creating software in various languages, using a wide range
-              of technologies. over the last 10 years, I've developed a passion
+              of technologies. over the last 6 years, I've developed a passion
               for crafting effective digital experiences.
             </p>
 
