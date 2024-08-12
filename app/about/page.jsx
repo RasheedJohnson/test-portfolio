@@ -104,20 +104,21 @@ const About = () => {
               value="about"
               className="w-full text-center xl:text-left"
             >
-              <ScrollArea className="h-[830px] shadow-xl shadow-black/20 p-6 rounded-lg">
+              <ScrollArea className="h-[830px] shadow-xl shadow-black/20 rounded-lg">
                 <div className="fex flex-col gap-[30px]">
-                  <h3 className="text-4xl text-green-400 font-bold mb-10 sticky top-0 backdrop-blur-md bg-primary/80 shadow-xl py-4">
+                  <h3 className="text-4xl text-green-400 font-bold sticky top-0 backdrop-blur-md bg-primary/80 shadow-xl py-4">
                     {about.title}
                   </h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8">
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 my-8 p-5">
                     {about.descriptionOne}
                   </p>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8">
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8 p-5">
                     {about.descriptionTwo}
                   </p>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8">
                     {about.descriptionThree}
                   </p>
+                  <div className=" w-[300px] xl:w-[400px] border-b-[1px] border-green-800 mx-auto xl:mx-0 my-14" />
                   <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0 mb-8">
                     {about.info.map((item, index) => {
                       return (
