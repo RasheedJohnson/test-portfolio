@@ -15,6 +15,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import SkillBlock from "@/components/SkillBlock";
 
 const About = () => {
   return (
@@ -70,28 +71,35 @@ const About = () => {
             {/* Skills */}
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px]">
+                {/* Languages */}
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-2xl font-bold">Languages</h3>
+                </div>
                 <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.items.map((skill, index) => {
+                  {skills.languages.map((skill, index) => {
                     return (
                       <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-green-400 transition-all duration-300">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
+                        <SkillBlock icon={skill.icon} name={skill.name} />
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                {/* Tools */}
+                <div className="flex flex-col mt-6 gap-[30px] text-center xl:text-left">
+                  <h3 className="text-2xl font-bold">Tools and Frameworks</h3>
+                </div>
+                <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.tools.map((tool, index) => {
+                    return (
+                      <li key={index}>
+                        <SkillBlock icon={tool.icon} name={tool.name} />
                       </li>
                     );
                   })}
