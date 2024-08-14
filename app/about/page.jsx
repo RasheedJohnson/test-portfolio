@@ -115,16 +115,16 @@ const About = () => {
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8 p-5">
                     {about.descriptionTwo}
                   </p>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8">
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8 p-5">
                     {about.descriptionThree}
                   </p>
-                  <div className=" w-[300px] xl:w-[400px] border-b-[1px] border-green-800 mx-auto xl:mx-0 my-14" />
+                  <div className=" w-[300px] xl:w-[400px] border-b-[1px] border-green-800 mx-auto xl:ml-5 my-14 " />
                   <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0 mb-8">
                     {about.info.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="flex flex-col justify-center xl:justify-start gap-1"
+                          className="flex flex-col justify-center xl:justify-start gap-1 pl-5"
                         >
                           <span className="text-white/60">
                             {item.fieldName}

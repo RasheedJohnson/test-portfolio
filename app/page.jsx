@@ -6,6 +6,7 @@ import { FiDownload } from "react-icons/fi";
 import SocialIcons from "@/components/SocialIcons";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80 mx-auto xl:mx-0">
               After creating software in various languages, using a wide range
-              of technologies. over the last 6 years, I've developed a passion
+              of technologies over the last 6 years, I've developed a passion
               for crafting effective digital experiences.
             </p>
 
@@ -33,7 +34,11 @@ const Home = () => {
                 size="lg"
                 className="uppercase flex items-center gap-2"
               >
-                <span>Download CV</span>
+                <span>
+                  <Link href="./CV.pdf" target="_blank">
+                    Download CV
+                  </Link>
+                </span>
                 <FiDownload className="text-xl" />
               </Button>
               <div className="mb-8 xl:mb-0">

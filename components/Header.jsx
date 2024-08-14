@@ -8,16 +8,16 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 text-white">
+    <header className="py-6 xl:py-6 mb-5 text-white sticky top-0 backdrop-blur-md bg-primary/50 shadow-md z-20">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
           <div className="text-4xl flex justify-center font-semibold">
             <Image
-              src="/Untitled.png"
-              width={80}
-              height={80}
-              className="rounded-full"
+              src="/favicon.png"
+              width={60}
+              height={60}
+              className="rounded-[15px]"
             />
           </div>
         </Link>
