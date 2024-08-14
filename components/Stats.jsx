@@ -15,7 +15,7 @@ const stats = [
     text: "Projects in development",
   },
   {
-    num: 2600,
+    num: 2660,
     text: "Github contributions in the last year",
   },
 ];

@@ -25,9 +25,9 @@ const Header = () => {
         {/* Desktop nav */}
         <div className="hidden xl:flex items-center gap-9">
           <Nav />
-          <Link href="/contact">
+          {/* <Link href="/contact">
             <Button>Hire Me</Button>
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile nav */}

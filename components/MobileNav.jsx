@@ -35,10 +35,10 @@ const MobileNav = () => {
           <Link href="/">
             <div className="text-4xl flex justify-center font-semibold">
               <Image
-                src="/Untitled.png"
+                src="/favicon.png"
                 width={80}
                 height={80}
-                className="rounded-full"
+                className="rounded-[18px]"
               />
             </div>
           </Link>

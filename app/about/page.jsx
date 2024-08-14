@@ -24,7 +24,7 @@ const About = () => {
           defaultValue="education"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-2 xl:gap-5">
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
@@ -46,7 +46,7 @@ const About = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[195px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[240px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-green-300">
                             {item.duration}
@@ -104,9 +104,9 @@ const About = () => {
               value="about"
               className="w-full text-center xl:text-left"
             >
-              <ScrollArea className="h-[830px] shadow-xl shadow-black/20 rounded-lg">
+              <ScrollArea className="h-[830px] rounded-lg">
                 <div className="fex flex-col gap-[30px]">
-                  <h3 className="text-4xl text-green-400 font-bold sticky top-0 backdrop-blur-md bg-primary/80 shadow-xl py-4">
+                  <h3 className="text-4xl  font-bold sticky top-0 bg-primary/95 backdrop-blur-lg py-4">
                     {about.title}
                   </h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 my-8 p-5">

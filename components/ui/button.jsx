@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 //     },
 
 const buttonVariants = cva(
-  "inline-flex items-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-white transition-colors",
+  "inline-flex items-center whitespace-nowrap rounded-lg text-base font-semibold ring-offset-white transition-colors",
   {
     variants: {
       variant: {
