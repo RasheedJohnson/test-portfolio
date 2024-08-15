@@ -104,6 +104,22 @@ const About = () => {
                     );
                   })}
                 </ul>
+
+                {/* Databases */}
+                <div className="flex flex-col mt-6 gap-[30px] text-center xl:text-left">
+                  <h3 className="text-2xl font-bold">
+                    Databases and Database Design
+                  </h3>
+                </div>
+                <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.databases.map((tool, index) => {
+                    return (
+                      <li key={index}>
+                        <SkillBlock icon={tool.icon} name={tool.name} />
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
 
