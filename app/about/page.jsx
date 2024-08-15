@@ -19,7 +19,7 @@ import SkillBlock from "@/components/SkillBlock";
 
 const About = () => {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
+    <div className="min-h-[80vh] flex items-center justify-center py-2 xl:py-0">
       <div className="container mx-auto">
         <Tabs
           defaultValue="education"
