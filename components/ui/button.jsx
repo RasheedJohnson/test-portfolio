@@ -4,13 +4,6 @@ import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-//   variants: {
-//     variant: {
-//       default: "bg-accent text-primary hover:bg-accent-hover",
-//       primary: "bg-primary text-white",
-//       outline: "border border-accent bg-transparent text-accent hover:bg-accent hover:text-primary"
-//     },
-
 const buttonVariants = cva(
   "inline-flex items-center whitespace-nowrap rounded-lg text-base font-semibold ring-offset-white transition-colors",
   {

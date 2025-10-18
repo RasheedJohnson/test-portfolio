@@ -134,13 +134,29 @@ const About = () => {
                     {about.title}
                   </h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 my-8 p-5">
-                    {about.descriptionOne}
+                    Based in Cape Town, South Africa, my journey into software
+                    development began not with a conventional start, but at the
+                    compelling interest in tinkering with microcontrollers and C
+                    programming. This hands-on curiosity quickly crystallized
+                    into a clear desire to solve tangible, real-world problems.
                   </p>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8 p-5">
-                    {about.descriptionTwo}
+                    This pursuit left me with the ambition to learn more and
+                    continuously refine my newly developed skills. I
+                    transitioned from frameworks like Bootstrap to TailwindCSS,
+                    and shifted from traditional MERN and PERN stack development
+                    to the stability of Next.js, seeking a robust and reliable
+                    tech stack. Along the way, I've built diverse personal
+                    projects—from specialized databases to custom account
+                    managers—but my core focus remains.
                   </p>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 mb-8 p-5">
-                    {about.descriptionThree}
+                    My largest and most ambitious project currently addresses
+                    significant inefficiencies within the healthcare systems of
+                    developing countries such as South Africa. This initiative
+                    is driven by the conviction that reliable, affordable
+                    technology (which currently exists) can profoundly impact
+                    patients and medical professionals alike.
                   </p>
                   <div className=" w-[300px] xl:w-[400px] border-b-[1px] border-green-800 mx-auto xl:ml-5 my-14 " />
                   <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0 mb-8">

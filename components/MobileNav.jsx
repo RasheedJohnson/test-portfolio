@@ -15,10 +15,6 @@ const links = [
     name: "about",
     path: "/about",
   },
-  {
-    name: "contact",
-    path: "/contact",
-  },
 ];
 
 const MobileNav = () => {
@@ -29,16 +25,16 @@ const MobileNav = () => {
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col  bg-primary backdrop-blur-md">
+      <SheetContent className="flex flex-col justify-start w-[300px] bg-primary backdrop-blur-md">
         {/* Logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="mt-2 mb-10 text-center text-2xl w-fit">
           <Link href="/">
             <div className="text-4xl flex justify-center font-semibold">
               <Image
                 src="/favicon.png"
-                width={80}
-                height={80}
-                className="rounded-[18px]"
+                width={30}
+                height={30}
+                className="rounded-md"
               />
             </div>
           </Link>
